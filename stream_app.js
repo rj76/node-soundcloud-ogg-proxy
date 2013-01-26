@@ -4,6 +4,7 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs'),
     Converter = require('./lib/converter'),
+    settings = require('./lib/settings.js'),
     Track = require('./lib/track')
     ;
 
@@ -11,7 +12,7 @@ app.configure(function () {
     app.use(express.methodOverride());
     app.use(express.logger({
         'format':':date :method :url :status - :response-time ms'
-    }))
+    }));
     app.use(app.router);
 });
 
@@ -20,7 +21,7 @@ app.configure('development', function () {
 });
 
 app.configure('production', function () {
-    app.use(express.errorHandler())
+    app.use(express.errorHandler());
 });
 
 app.get('/stream/:track_id', function (request, response) {
@@ -37,10 +38,10 @@ app.get('/stream/:track_id', function (request, response) {
     });
 
     request.on('close', function () {
-        track.stopStream()
-        converter.kill()
+        track.stopStream();
+        converter.kill();
     })
 })
 
-app.listen(3000)
-console.log(new Date, 'Canvas.fm starting')
+app.listen(settings.port);
+console.log(new Date, 'Soundcloud ogg stream listening');
