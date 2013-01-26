@@ -1,7 +1,7 @@
 node-soundcloud-ogg-proxy
 =========================
 
-Simple Node.js soundcloud mp3 stream to ogg proxy via ffmpeg (for example to use firefox <audio/> element which expects ogg.
+Simple Node.js soundcloud mp3 stream to ogg proxy via ffmpeg (for example to use firefox audio element which expects ogg).
 
 
 Usage
