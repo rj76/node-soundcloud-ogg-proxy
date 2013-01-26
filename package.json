@@ -1,0 +1,10 @@
+{
+    "name": "soundcloud-ogg-stream",
+    "version": "0.1.0",
+    "author": "R.A. Jansen <richard@jansenit.com>",
+    "description": "Simple Node.js soundcloud mp3 stream to ogg proxy via ffmpeg",
+    "dependencies": {
+        "express": "3.1.0"
+    },
+    "license": "MIT"
+}
